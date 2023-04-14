@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Performs log parsing from stdin"""
+"""Log parsing"""
 
 import re
 import sys
@@ -10,7 +10,7 @@ statusC_counter = {200: 0, 301: 0, 400: 0,
 
 
 def printCodes(dict, file_s):
-    """Prints the status code and the number of times they appear"""
+    """Prints the status code"""
     print("File size: {}".format(file_s))
     for key in sorted(dict.keys()):
         if statusC_counter[key] != 0:
@@ -35,6 +35,6 @@ if __name__ == "__main__":
             except:
                 pass
         printCodes(statusC_counter, file_size)
-    except KeyboardInterrupt:
+    except (KeyboardInterrupt, EOFError):
         printCodes(statusC_counter, file_size)
         raise
