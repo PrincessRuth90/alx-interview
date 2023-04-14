@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" script that reads stdin line by line"""
+"""Performs log parsing from stdin"""
 
 import re
 import sys
@@ -10,7 +10,7 @@ statusC_counter = {200: 0, 301: 0, 400: 0,
 
 
 def printCodes(dict, file_s):
-    """status code printed"""
+    """Prints the status code and the number of times they appear"""
     print("File size: {}".format(file_s))
     for key in sorted(dict.keys()):
         if statusC_counter[key] != 0:
