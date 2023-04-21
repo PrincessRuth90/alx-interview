@@ -3,7 +3,7 @@
 
 
 def validUTF8(data):
-    """UTF-8 Validation method"""
+    """validUTF8 method"""
 
     data = iter(data)
     for leading_byte in data:
@@ -18,7 +18,7 @@ def validUTF8(data):
 
 
 def _count_leading_ones(byte):
-    """Count the ones leading"""
+    """Counts the leading ones."""
 
     for i in range(8):
         if byte >> 7 - i == 0b11111111 >> 7 - i & ~1:
